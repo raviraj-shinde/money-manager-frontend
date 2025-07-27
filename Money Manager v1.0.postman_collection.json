@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "2eaa230f-e7a6-44c1-a501-b5cd76cd97ea",
+		"name": "Money Manager v1.0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27225325"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"abc\",\r\n    \"email\": \"voneh42279@mvpmedix.com\",\r\n    \"password\": \"abc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{localhost}}/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ravishinde96k@gmail.com\",\r\n    \"password\": \"ravi\"\r\n}\r\n\r\n//voneh42279@mvpmedix.com - abc\r\n//ravishinde96k@gmail.com - ravi\r\n\r\n//eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2b25laDQyMjc5QG12cG1lZGl4LmNvbSIsImlhdCI6MTc1MzIwNjk5MCwiZXhwIjoxNzUzMjQyOTkwfQ.9lka75Q1tOU1Kba1TrhdIN4KblPqr4vUUjieaSuzDSQ - abc",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{localhost}}/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Others\",\r\n    \"type\": \"expense\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{localhost}}/categories"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Expense",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"2 Movie Tickets\",\r\n    \"categoryId\": 6,\r\n    \"amount\" : 440\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{localhost}}/expenses"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Income",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"July Bonus\",\r\n    \"categoryId\": 3,\r\n    \"amount\" : 33000\r\n    //\"date\": \"2025-06-22\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{localhost}}/incomes"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Category",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Entertainement\",\r\n        \"type\": \"expense\",\r\n        \"icon\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{localhost}}/categories/6"
+			},
+			"response": []
+		},
+		{
+			"name": "Read Categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{localhost}}/categories"
+			},
+			"response": []
+		},
+		{
+			"name": "Download Income",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{localhost}}/excel/download/income"
+			},
+			"response": []
+		},
+		{
+			"name": "Download Expense",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{localhost}}/excel/download/expense"
+			},
+			"response": []
+		},
+		{
+			"name": "Read Filter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\" : \"income\",\r\n    \"keyword\" : \"income\",\r\n    \"sortOrder\" : \"desc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{localhost}}/filter"
+			},
+			"response": []
+		},
+		{
+			"name": "Read Dashboard",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{localhost}}/dashboard"
+			},
+			"response": []
+		},
+		{
+			"name": "Read Expenses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{localhost}}/expenses"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Expense",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "{{localhost}}/expenses/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Income",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "{{localhost}}/incomes/5"
+			},
+			"response": []
+		},
+		{
+			"name": "Read Incomes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{localhost}}/incomes"
+			},
+			"response": []
+		},
+		{
+			"name": "Read Categories By Type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{localhost}}/categories/income"
+			},
+			"response": []
+		},
+		{
+			"name": "Public Profile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{localhost}}/profile"
+			},
+			"response": []
+		},
+		{
+			"name": "Send  expenses.xlsx email",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{localhost}}/email/expense-excel"
+			},
+			"response": []
+		},
+		{
+			"name": "Send  incomes.xlsx email Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{localhost}}/email/income-excel"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXZpc2hpbmRlOTZrQGdtYWlsLmNvbSIsImlhdCI6MTc1MzU5ODg2NywiZXhwIjoxNzUzNjM0ODY3fQ.XE2KL09-cvtD9DGe6eLFWYWqq5KdFwYhB-HwkwXSk4g"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": "http://localhost:8080/api/v1.0",
+			"type": "default"
+		},
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
